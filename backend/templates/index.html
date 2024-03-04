@@ -1,0 +1,17 @@
+<!doctype html>
+<link rel="stylesheet" href="/static/main.css">
+<main>
+    <div class="articles">
+        {% for article in articles %}
+            <div class="article">
+                {% if article.urlToImage %}
+                    <img src={{article.urlToImage}}><br>
+                {% endif %}
+                <a href={{article.url}}>{{article.title}}</a>
+                {% if article.content %}
+                    <p>{{article.content}}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</main>
